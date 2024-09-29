@@ -226,6 +226,11 @@ sudo apt remove nombre   # Elimina un programa
 
 ### 9. **Comandos de ayuda**
 
+Información sobre el sistema operativo, incluyendo el nombre del kernel, la versión y la arquitectura del sistema.
+```bash
+uname -a
+```
+
 #### `man` (Manual)
 Muestra la documentación de un comando. Es muy útil para obtener más información sobre cómo usar cualquier comando.
 
