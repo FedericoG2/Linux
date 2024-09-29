@@ -1,5 +1,5 @@
 # Linux
-¡Genial! Vamos a comenzar con algunos **comandos básicos de Linux**. Estos son fundamentales para navegar, gestionar archivos y comprender cómo interactuar con el sistema desde la **línea de comandos (CLI)**. Te los explicaré junto con ejemplos simples.
+
 
 ### 1. **Navegación por el sistema de archivos**
 
