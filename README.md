@@ -1,7 +1,69 @@
 # Linux
 
+### 1. **Entrada - Salida y Error estándar**
 
-### 1. **Navegación por el sistema de archivos**
+#### 1. Redirección de flujo: `>`, `>>`, `1>`, `2>`
+Los operadores de redirección permiten enviar la salida o los errores de un comando hacia archivos en lugar de mostrarlos directamente en pantalla.
+
+- `>` o `1>` (Redirección de salida estándar): Redirige la salida estándar de un comando hacia un archivo. Si el archivo ya existe, lo sobrescribe.
+
+    **Ejemplo:**
+    ```bash
+    ls > listado.txt
+    ```
+    Aquí, el comando `ls` lista los archivos del directorio y guarda los resultados en el archivo `listado.txt`. Si el archivo ya existe, será sobrescrito.
+
+- `>>` (Redirección con agregar): Añade la nueva salida al final de un archivo existente, en lugar de sobrescribirlo.
+
+    **Ejemplo:**
+    ```bash
+    echo "Nueva línea" >> listado.txt
+    ```
+    Esto agregará "Nueva línea" al final del archivo `listado.txt` sin eliminar el contenido previo.
+
+- `2>` (Redirección de error estándar): Redirige los mensajes de error de un comando hacia un archivo.
+
+    **Ejemplo:**
+    ```bash
+    ls archivo_no_existe.txt 2> errores.txt
+    ```
+    Aquí, el comando `ls` intentará listar un archivo que no existe, y el error se guardará en el archivo `errores.txt`.
+
+#### 2. Redirección `>>` (Agregar al final)
+Este operador es útil cuando no quieres sobrescribir el contenido de un archivo. Usa `>>` para agregar contenido nuevo al final del archivo existente, en lugar de reemplazarlo.
+
+**Ejemplo:**
+```bash
+echo "Otra línea" >> listado.txt
+
+### 3. `2>&1` (Redirigir errores al mismo archivo que la salida)
+Este comando combina los flujos de error estándar y salida estándar, redirigiendo los errores (stderr) al mismo lugar donde se envía la salida (stdout).
+
+- `2>`: Redirige el error.
+- `&1`: Especifica que el destino del error debe ser el mismo que el de la salida estándar.
+
+**Ejemplo:**
+```bash
+ls archivo_no_existe.txt > salida.txt 2>&1
+
+### 4. Redirección de entrada estándar `0<` o `<`
+Este tipo de redirección se usa para dar entrada a un comando desde un archivo en lugar de desde el teclado.
+
+- `<` o `0<`: Redirige la entrada estándar desde un archivo.
+
+**Ejemplo:**
+```bash
+cat < fichero.txt
+
+### 5. Redirección combinada
+La redirección combinada te permite manejar tanto la salida como los errores de un comando de forma independiente o combinada.
+
+#### Redirigir la salida estándar a un archivo y el error a otro archivo
+```bash
+ls archivo_no_existe.txt > salida.txt 2> errores.txt
+
+
+### 2. **Navegación por el sistema de archivos**
 
 #### `pwd` (Print Working Directory)
 Este comando te muestra en qué directorio estás actualmente.
@@ -43,7 +105,7 @@ cd ..              # Sube un nivel en el sistema de archivos
 cd                 # Vuelve al directorio personal (/home/usuario)
 ```
 
-### 2. **Gestión de archivos y directorios**
+### 3. **Gestión de archivos y directorios**
 
 #### `touch`
 Crea un archivo vacío nuevo o actualiza la fecha de modificación si ya existe.
@@ -103,7 +165,7 @@ nano archivo.txt  # Abre un archivo para editar con nano
 vi archivo.txt    # Abre un archivo para editar con vi
 ```
 
-### 3. **Permisos y propietarios**
+### 4. **Permisos y propietarios**
 
 #### `chmod` (Change Mode)
 Cambia los permisos de un archivo o directorio.
@@ -120,7 +182,7 @@ Cambia el propietario de un archivo o directorio.
 sudo chown nuevo_dueño archivo.txt
 ```
 
-### 4. **Visualización de procesos y uso del sistema**
+### 5. **Visualización de procesos y uso del sistema**
 
 #### `ps`
 Muestra una lista de los procesos que están ejecutándose.
@@ -151,7 +213,7 @@ También puedes matar un proceso con más fuerza usando `-9`:
 kill -9 1234
 ```
 
-### 5. **Comandos de red**
+### 6. **Comandos de red**
 
 #### `ping`
 Verifica la conectividad con una red o sitio.
