@@ -1,5 +1,11 @@
 # Linux
 
+### 1. **Enlace simbolico**
+Por ejemplo, si deseas crear un enlace simbólico para un archivo llamado texto.txt en el directorio /home/usuario/Documentos/, podrías hacer lo siguiente:
+    
+    #### ln -s /home/usuario/Documentos/texto.txt /home/usuario/EnlaceSimbolico.txt
+ 
+
 ### 1. **Entrada - Salida y Error estándar**
 
 #### 1. Redirección de flujo: `>`, `>>`, `1>`, `2>`
