@@ -4,7 +4,7 @@
 Por ejemplo, si deseas crear un enlace simbólico para un archivo llamado texto.txt en el directorio /home/usuario/Documentos/, podrías hacer lo siguiente:
     
     #### ln -s /home/usuario/Documentos/texto.txt /home/usuario/EnlaceSimbolico.txt
- 
+ Este comando crea un enlace simbólico llamado EnlaceSimbolico.txt que apunta al archivo texto.txt. Si luego accedes o editas el enlace simbólico, en realidad estarás trabajando con el archivo original.
 
 ### 1. **Entrada - Salida y Error estándar**
 
